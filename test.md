@@ -25,50 +25,51 @@ We will learn :
 ### LOGISTIC REGRESSION -
 
 _NOTATIONS -_
-(x_i,y_i) – i ranges from 1 to m
-x is called feature y is the label
-x can be a vector with n_x parameters
-Logistic regression is used for classification ie y can be either 0 or 1
 
-m -> no. of training examples  
-X is a matrix of size (n_x,m)
-Y is a matrix of shape (1,m)
-y^ is predicted output = P(y=1|x)
+* (x_i,y_i) – i ranges from 1 to m
+* x is called feature y is the label
+* can be a vector with n_x parameters
+* Logistic regression is used for classification ie y can be either 0 or 1
+
+* m -> no. of training examples  
+* X is a matrix of size (n_x,m)
+* Y is a matrix of shape (1,m)
+* y^ is predicted output = P(y=1|x)
 
 _SIGMOID FUNCTION –_
-We need sigmoid to give a value between 0 and 1 since z by itself can be any value
+
+* We need sigmoid to give a value between 0 and 1 since z by itself can be any value
  
 _LOSS FUNCTION – L_
 
-Measures how good y^ is as compared to y 
- 
-So this ensures loss is minimum for both y=0 and y=1 when y^ is a good prediction ( ie close to y)
+* Measures how good y^ is as compared to y 
+* So this ensures loss is minimum for both y=0 and y=1 when y^ is a good prediction ( ie close to y)
 ![loss](loss.png)
 
 _COST FUNCTION – J_
 
-Loss function was for single training example , cost is for entire training set
-  
-It is a convex function with only 1 global minima 
+* Loss function was for single training example , cost is for entire training set
+* It is a convex function with only 1 global minima 
 
 _GRADIENT DESCENT -_
 
-It helps us find w and b that minimize the cost function J ( ie give y^ almost close to y) through backpropagation
-We update w and b in every iteration using below function and determine cost after every iteration until it becomes say minimum
+* It helps us find w and b that minimize the cost function J ( ie give y^ almost close to y) through backpropagation
+* We update w and b in every iteration using below function and determine cost after every iteration until it becomes say minimum
 
 _COMPUTATION GRAPHS –_
 
-Computation involves -
+* Computation involves -
 Forward propagation to compute output of a neural network followed by backpropogation which changes w and b using gradient descent
 
 _VECTORIZATION –_
 
-Using np.dot to multiply two vectors instead of using for loop reduces computation time and is useful for large datasets.
-Both GPU and CPU have parallel instructions – SIMD which works in case of dot product 
-Z=np.dot(w_T*X) + b removes for loops by making Z a vector of size (1,m)
-Then we apply sigmoid function to this entire Z vector 
+* Using np.dot to multiply two vectors instead of using for loop reduces computation time and is useful for large datasets.
+* Both GPU and CPU have parallel instructions – SIMD which works in case of dot product 
+* Z=np.dot(w_T*X) + b removes for loops by making Z a vector of size (1,m)
+* Then we apply sigmoid function to this entire Z vector 
 
 _BROADCASTING –_
-Using this we can resize vectors/scalars to give a shape appropriate for performing arithmetic operations with other matrices. 
-For (m,n) + (1,n) -> the (1,n) resizes to (m,n) 
-For (m,n) + k -> k changes to (m,1) with all m values as k 
+
+* Using this we can resize vectors/scalars to give a shape appropriate for performing arithmetic operations with other matrices. 
+* For (m,n) + (1,n) -> the (1,n) resizes to (m,n) 
+* For (m,n) + k -> k changes to (m,1) with all m values as k 
