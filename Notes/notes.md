@@ -170,6 +170,8 @@ _FORWARD AND BACKPROPAGATION-_
 * Overall formulas -
 ![f](Notes/Images/Fandb_prop.png)
 
+wedfghjkl
+aaaaaaaaa
 * Flowchart -
 ![f](Images/forwbackprop.png)
 
